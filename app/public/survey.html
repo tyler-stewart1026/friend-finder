@@ -21,7 +21,7 @@
         <div class="jumbotron">
             <form>
                 <div class="form-group">
-                    <label for="name"><strong> Name</strong></label>
+                    <label for="name"><strong>Name</strong></label>
                     <input type="text" class="form-control" id="name"
                         placeholder="Your Name here..."><br>
                     <label for="Pic"><strong>Add a link to your Picture</strong></label>
@@ -143,13 +143,27 @@
                     <option>5(Strongly Agree)</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
             </form>
     </div>
 
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+    
+        $('#submit').on('click', function() {
+            event.preventDefault();
+            var newFriend = {
+                friendName: $('.name').val().toLowerCase().trim(), 
+                pic: $('.friendPic').val().toLowerCase().trim(), 
+                scores: []
+            }
+        });
+        console.log(newFriend + "It worked!");
+
+    </script>
 </body>
 
 </html>
