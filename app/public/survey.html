@@ -148,20 +148,22 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script>
+
     
         $('#submit').on('click', function() {
             event.preventDefault();
-            var newFriend = {
-                friendName: $('.name').val().toLowerCase().trim(), 
-                pic: $('.friendPic').val().toLowerCase().trim(), 
-                scores: []
-            }
+
+            var friendName = $('#name').val().trim();
+            var pic = $('#pic').val().trim();
+            console.log(friendName)
+            console.log(pic + "It worked!");
         });
-        console.log(newFriend + "It worked!");
 
     </script>
 </body>
