@@ -1,6 +1,6 @@
 # Friend Finder!
 
-###Fill out a simple ten question survey to find the best match!
+### Fill out a simple ten question survey to find the best match!
 
 ![gif of name](/images/name.PNG)
 
