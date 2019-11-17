@@ -1,130 +1,51 @@
 var friends = [{
-    name: "Tyler", 
-    picture: "",
-    scores: [
-        3,
-        1,
-        4,
-        4,
-        1,
-        2,
-        5,
-        3, 
-        4,
-        5
-    ], 
-    name: "Andy",
-    picture: "",  
-    scores: [
-        4,
-        3,
-        4,
-        3,
-        2,
-        1,
-        2,
-        3, 
-        5,
-        5
-    ], 
-    name: "Jeremy",
-    picture: "", 
-    scores: [
-        5,
-        3,
-        2,
-        2,
-        4,
-        5,
-        2,
-        2, 
-        3,
-        1
-    ], 
-    name: "Jeremy", 
-    picture: "", 
-    scores: [
-        2,
-        3,
-        5,
-        1,
-        1,
-        1,
-        4,
-        2, 
-        4,
-        3
-    ], 
-    name: "Mikayla", 
-    picture: "", 
-    score: [
-        4,
-        4,
-        4,
-        2,
-        1,
-        2,
-        4,
-        5, 
-        2,
-        1
-    ], 
-    name: "Bob", 
-    picture: "", 
-    score: [
-        1,
-        1,
-        2,
-        3,
-        3,
-        5,
-        5,
-        2, 
-        1,
-        5
-    ], 
-    name: "Connor", 
-    picture: "", 
-    score: [
-        1,
-        2,
-        5,
-        5,
-        2,
-        2,
-        4,
-        1, 
-        5,
-        5
-    ],
-    name: "Matt", 
-    picture: "", 
-    score: [
-        5,
-        3,
-        5,
-        5,
-        2,
-        2,
-        5,
-        4, 
-        4,
-        1
-    ], 
-    name: "Jonathen", 
-    picture: "", 
-    score: [
-        4,
-        1,
-        2,
-        2,
-        1,
-        5,
-        5,
-        4, 
-        4,
-        2
-    ] 
-}]
+        name: "Tyler",
+        pic: "https://cdn.pixabay.com/photo/2011/01/17/17/40/raven-4590_960_720.jpg",
+        score: [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        name: "Andy",
+        pic: "https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_960_720.jpg",
+        score: [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+        ]
+    },
+    {
+        name: "Jeremy",
+        pic: "https://cdn.pixabay.com/photo/2017/06/09/09/39/adler-2386314_960_720.jpg",
+        score: [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
+    }
+]
 
 module.exports = friends;

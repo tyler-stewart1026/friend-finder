@@ -22,11 +22,9 @@
             <form>
                 <div class="form-group">
                     <label for="name"><strong>Name</strong></label>
-                    <input type="text" class="form-control" id="name"
-                        placeholder="Your Name here..."><br>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name here..."><br>
                     <label for="Pic"><strong>Add a link to your Picture</strong></label>
-                    <input type="text" class="form-control" id="pic"
-                        placeholder="Link to your picture here...">
+                    <input type="text" class="form-control" id="pic" placeholder="Link to your picture here...">
                 </div>
             </form>
         </div>
@@ -144,7 +142,28 @@
                 </select>
             </div>
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-            </form>
+        </form>
+
+        <div class="modal fade" id="modal-results" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Your match!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="match-name"></div>
+                        <img class="text-center" id="match-photo" src="" alt="match image" style="height: 240px; width: 320px;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
@@ -154,16 +173,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script>
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
 
-    
-        $('#submit').on('click', function() {
+        $('#submit').on('click', function () {
             event.preventDefault();
 
 
             var userData = {
-                friendName: $('#name').val().trim(), 
+                friendName: $('#name').val().trim(),
                 pic: $('#pic').val().trim(),
-                scores: [
+                score: [
                     $('#q1').val(),
                     $('#q2').val(),
                     $('#q3').val(),
@@ -176,20 +197,21 @@
                     $('#q10').val()
                 ]
             }
-            $.post("/api/match", userData, function(data) {
-                console.log(data);
+            $.post("/api/match", userData, function (data) {
+                console.log(data + "please");
+
+                // Test Values of text inputs
+                console.log(userData.score)
+                // console.log(userData.friendName)
+                // console.log(userData.pic)
+                $("#match-name").text(data.name);
+                $("#match-photo").attr('src', data.pic);
+                $("#modal-results").modal("toggle");
+
+                $('#name').val("");
+                $('#pic').val("");
             })
-            // Test Values of text inputs
-            console.log(userData.scores)
-            // console.log(userData.friendName)
-            // console.log(userData.pic)
-
-
-        $('#name').val("");
-        $('#pic').val("");
         });
-
-
     </script>
 </body>
 
